@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Calculator {
+public class calc {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -14,18 +14,18 @@ public class Calculator {
                 throw new IllegalArgumentException("введены арабские и римские");
             }
             if(input.length()>5){
-            throw  new IllegalArgumentException();
+                throw  new IllegalArgumentException();
             }
             int num1;
             int num2;
             try {
-                num1 = convertToNumber(array[0]); 
+                num1 = convertToNumber(array[0]);
                 num2 = convertToNumber(array[2]);
 
 
             } catch (IllegalArgumentException e) {
                 throw new IllegalArgumentException("диапозон от 1 до 10");
-                return;
+
             }
             char operation = array[1].charAt(0);
             int result;
@@ -46,13 +46,13 @@ public class Calculator {
                 case '/':
                     if (num2 == 0) {
                         throw new IllegalArgumentException("на ноль делить нельзя");
-                        return;
+
                     }
                     result = num1 / num2;
                     break;
                 default:
                     throw new IllegalArgumentException("неверный символ");
-                    return;
+
 
 
             }
