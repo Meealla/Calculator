@@ -24,7 +24,7 @@ public class Calculator {
 
 
             } catch (IllegalArgumentException e) {
-                System.out.println("диапозон от 1 до 10");
+                throw new IllegalArgumentException("диапозон от 1 до 10");
                 return;
             }
             char operation = array[1].charAt(0);
@@ -45,13 +45,13 @@ public class Calculator {
                     break;
                 case '/':
                     if (num2 == 0) {
-                        System.out.println("на ноль делить нельзя");
+                        throw new IllegalArgumentException("на ноль делить нельзя");
                         return;
                     }
                     result = num1 / num2;
                     break;
                 default:
-                    System.out.println("неверный символ");
+                    throw new IllegalArgumentException("неверный символ");
                     return;
 
 
