@@ -13,7 +13,7 @@ public class calc {
             if (input.matches(".*[IVX].*") & input.matches(".*\\d.*")) {
                 throw new IllegalArgumentException("введены арабские и римские");
             }
-            if(input.length()>5){
+            if(input.length()>6){
                 throw  new IllegalArgumentException();
             }
             int num1;
