@@ -13,7 +13,7 @@ public class calc {
             if (input.matches(".*[IVX].*") & input.matches(".*\\d.*")) {
                 throw new IllegalArgumentException("введены арабские и римские");
             }
-            if(input.length()>6){
+            else if(array.length >3){
                 throw  new IllegalArgumentException();
             }
             int num1;
@@ -58,6 +58,9 @@ public class calc {
             }
 
             if (input.matches(".*[IVX].*")) {
+                if (result<=0){
+                    throw new ArithmeticException("неверная операция");
+                }
                 System.out.println("результат " + IntegerToRoman(result));
 
             } else {
