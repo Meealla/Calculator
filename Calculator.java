@@ -5,11 +5,11 @@ public class Calculator {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        while (true) {
-
-
-            String input = sc.nextLine();
-            String[] array = input.split(" ");
+        String input = sc.nextLine();
+        System.out.println(calc(input));
+    }
+    public static String calc(String input){
+        String[] array = input.split(" ");
             if (input.matches(".*[IVX].*") & input.matches(".*\\d.*")) {
                 throw new IllegalArgumentException("введены арабские и римские");
             }
@@ -22,7 +22,7 @@ public class Calculator {
                 num1 = convertToNumber(array[0]);
                 num2 = convertToNumber(array[2]);
 
-                if ((num1 < 1 || num1 > 10) || (num2 < 1 || num2 > 10)) {
+                if ((num1 < 1 || num1 > 10) || (num2 < 2 || num2 > 10)) {
                     throw new IllegalArgumentException("Числа должны быть в диапазоне от 1 до 10 включительно");
                 }
             } catch (IllegalArgumentException e) {
@@ -62,13 +62,13 @@ public class Calculator {
                 if (result<=0){
                     throw new ArithmeticException("неверная операция");
                 }
-                System.out.println("результат " + IntegerToRoman(result));
+                return "результат " + IntegerToRoman(result);
 
             } else {
-                System.out.println("результат " + result);
+                return "результат " + (result);
             }
         }
-    }
+
 
     public static int convertToNumber(String input) {
 
